@@ -29,7 +29,7 @@ pipeline {
                 script {
                     // Run unit tests using Maven
                     echo 'Running unit tests...'
-                    bat 'mvn run CalciTest'
+                    bat 'mvn test CalciTest'
                 }
             }
         }
