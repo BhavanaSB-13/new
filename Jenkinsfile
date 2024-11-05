@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-username/your-repository.git'
+                git 'https://github.com/BhavanaSB-13/new.git'
             }
         }
 
@@ -19,7 +19,7 @@ pipeline {
                 script {
                     // Build the project using Maven (compile, package, install dependencies)
                     echo 'Building the project using Maven...'
-                    sh "'${MAVEN_HOME}/bin/mvn' clean install -DskipTests"  // Skips tests in the build stage
+                    bat 'mvn clean install'
                 }
             }
         }
@@ -29,7 +29,7 @@ pipeline {
                 script {
                     // Run unit tests using Maven
                     echo 'Running unit tests...'
-                    sh "'${MAVEN_HOME}/bin/mvn' test"
+                    bat 'mvn run CalciTest'
                 }
             }
         }
